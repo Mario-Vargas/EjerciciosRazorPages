@@ -1,0 +1,23 @@
+﻿@page
+@model EjerciciosRazorPages.Pages.CifradoModel
+@{
+}
+<h1>Cifrado</h1>
+<form method="POST">
+    <div class="">
+        <label asp-for="mensaje"></label>
+        <input asp-for="mensaje" class="" />
+        <span asp-validation-for="mensaje" class="text-danger"></span>
+    </div>
+    <div class="">
+        <label asp-for="clave"></label>
+        <input asp-for="clave" class="" />
+        <span asp-validation-for="clave" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Cifrar</button>
+</form>
+@if (Model.cifrado != null && Model.cifrado != "")
+{
+
+    <h2>Mensaje cifrado:@Model.cifrado </h2>
+}

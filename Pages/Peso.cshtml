@@ -1,0 +1,26 @@
+﻿@page
+@model EjerciciosRazorPages.Pages.PesoModel
+@{
+}
+
+<h1>IMC</h1>
+
+<form method="POST">
+    <div class="">
+        <label asp-for="peso"></label>
+        <input asp-for="peso" class="" />
+        <span asp-validation-for="peso" class=""></span>
+    </div>
+    <div class="">
+        <label asp-for="altura"></label>
+        <input asp-for="altura" class="" />
+        <span asp-validation-for="altura" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Calcular</button>
+    </form>
+@if (Model.imc != null && Model.imc != 0)
+    {
+    <h2>IMC:@Model.imc </h2>
+
+    <h4>@Model.clasificacion</h4>
+    }

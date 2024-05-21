@@ -1,0 +1,39 @@
+﻿@page
+@model EjerciciosRazorPages.Pages.EstadisticaModel
+@{
+}
+
+<h1>Arreglo</h1>
+<form method="POST">
+    <button type="submit" class="btn btn-primary">Generar</button>
+</form>
+@if (Model.arregloAleatorio != null && Model.arregloAleatorio.Length > 0)
+{
+    <h2>Arreglo</h2>
+    <p>
+        [
+        @string.Join(", ", Model.arregloAleatorio)
+        ]
+    </p>
+
+    <h2>Arreglo ordenado</h2>
+    <p>
+        [
+        @string.Join(", ", Model.arregloOrdenado)
+        ]
+    </p>
+
+    <p>Suma = @Model.suma</p>
+    <p>Promedio = @Model.promedio</p>
+    <p>
+        Moda
+    </p>
+    <ul>
+        @foreach (var item in Model.moda)
+        {
+            <li>@item</li>
+        }
+        </ul>
+
+        <p>Mediana = @Model.mediana</p>
+}
